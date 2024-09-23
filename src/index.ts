@@ -1,5 +1,5 @@
-// src/index.ts
 import express from 'express';
+import cors from 'cors';
 import quizRoutes from './routes/quiz.routes';
 import { connectDB } from './database/connection';
 
@@ -7,6 +7,12 @@ const app = express();
 
 // Middleware para parsear JSON
 app.use(express.json());
+
+// Middleware para habilitar CORS
+app.use(cors({
+  origin: 'http://localhost:5173',  // Permitir requisições do frontend
+  methods: ['GET', 'POST'],  // Definir os métodos permitidos
+}));
 
 // Rotas
 app.use('/api', quizRoutes);

@@ -6,6 +6,8 @@ export const submitAnswers = async (req: Request, res: Response) => {
   try {
     const { name, quizId, answers } = req.body;
 
+    console.log('Respostas recebidas:', req.body);
+
     // Validação básica para garantir que todos os campos estão presentes
     if (!name || !quizId || !answers || !Array.isArray(answers) || answers.length === 0) {
       return res.status(400).json({ error: 'Dados incompletos' });
