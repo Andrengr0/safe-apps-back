@@ -10,9 +10,11 @@ app.use(express.json());
 
 // Middleware para habilitar CORS
 app.use(cors({
-  origin: '*',  // Permitir requisições do frontend
+  origin: '*',  // Permitir apenas a origem do frontend
   methods: ['GET', 'POST'],  // Definir os métodos permitidos
+  allowedHeaders: ['Content-Type', 'Authorization'],  // Cabeçalhos permitidos
 }));
+
 
 // Rotas
 app.use('/api', quizRoutes);
