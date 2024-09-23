@@ -21,9 +21,11 @@ app.use('/api', quizRoutes);
 
 // Conexão com o MongoDB e Inicialização do Servidor
 connectDB().then(() => {
-  app.listen(3000, () => {
-    console.log('Servidor rodando na porta 3000');
+  app.listen(3333, () => {
+    console.log('Servidor rodando na porta 3333');
   });
 }).catch((error) => {
   console.error('Erro ao conectar ao MongoDB', error);
 });
+
+
