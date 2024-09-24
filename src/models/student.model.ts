@@ -1,4 +1,3 @@
-// src/models/student.model.ts
 import { Schema, model, Document } from 'mongoose';
 
 // Interface para as respostas de um quiz
@@ -12,6 +11,8 @@ interface IStudent extends Document {
   name: string;
   quizId: string;
   answers: IAnswer[];
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 // Esquema para as respostas do quiz
@@ -25,7 +26,7 @@ const StudentSchema = new Schema<IStudent>({
   name: { type: String, required: true },
   quizId: { type: String, required: true },
   answers: [AnswerSchema], // Um array de respostas para o quiz
-});
+}, { timestamps: true });  // Adiciona automaticamente createdAt e updatedAt
 
 // Modelo para o estudante e quiz respondido
 const Student = model<IStudent>('Student', StudentSchema);
