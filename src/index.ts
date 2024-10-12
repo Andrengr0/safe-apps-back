@@ -2,6 +2,9 @@ import express from 'express';
 import cors from 'cors';
 import quizRoutes from './routes/quiz.routes';
 import { connectDB } from './database/connection';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
 
