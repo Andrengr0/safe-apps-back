@@ -1,6 +1,3 @@
-# Creating the complete content for the README.md as requested in markdown format
-
-markdown_content = """
 # Safe Apps Backend
 
 Este é o backend do projeto Safe Apps, que utiliza Node.js, Express, MongoDB, e TypeScript. Ele permite o envio e armazenamento de respostas de quizzes, bem como a conexão e manipulação de dados através de um banco de dados MongoDB.
